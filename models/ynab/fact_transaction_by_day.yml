@@ -34,8 +34,8 @@ models:
         tests:
           - accepted_values:
               values: [true, false]
-      - name: amount_usd_millicents
-        description: transaction's usd amount in millicents
+      - name: amount_usd_milliunits
+        description: transaction's usd amount in milliunits
       - name: amount_usd
         description: transaction's usd amount
       - name: deleted
