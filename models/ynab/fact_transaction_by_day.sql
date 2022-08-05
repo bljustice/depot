@@ -8,7 +8,8 @@ select
     , dim_category_key
     , cleared
     , approved
-    , amount
+    , amount as amount_usd_millicents
+    , amount / 100000 as amount_usd
     , yt.deleted
 from 
     warehouse.ynab_transactions yt
