@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_ynab__accounts
+    description: ynab account staging view
+    docs:
+      show: true
+    columns:
+      - name: dim_account_key
+        description: primary key for account
+        tests:
+          - unique
+          - not_null
+      - name: account_name
+        description: ynab account name
+      - name: account_type
+        description: type of account
+      - name: on_budget
+        description: whether or not account is on budget
+        tests:
+          - accepted_values:
+              values: [true, false]
+      - name: closed
+        description: whether or not account is closed
+        tests:
+          - accepted_values:
+              values: [true, false]
+      - name: balance
+        description: usd amount left over in account
+      - name: cleared_balance
+        description: account balance amount that's cleared
+      - name: uncleared balance
+        description: account balance that isn't cleared
+      - name: deleted
+        description: whether or not account is deleted
+        tests:
+          - accepted_values:
+              values: [true, false]
