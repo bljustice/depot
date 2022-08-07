@@ -1,27 +1,27 @@
 {{ config(materialized='table') }}
 
 select
-    id as dim_transaction_key
+    dim_transaction_key
     , dim_date_key
     , dim_account_key
     , dim_payee_key
     , dim_category_key
     , cleared
     , approved
-    , amount as amount_usd_milliunits
-    , round(amount / 1000., 2) as amount_usd
+    , amount_usd_milliunits
+    , amount_usd
     , yt.deleted
-from 
-    warehouse.ynab_transactions yt
+from
+    {{ ref('stg_ynab__transactions') }} yt
 join
-    warehouse.dim_date dd
+    {{ ref('dim_date') }} dd
     using (date)
 join
-    warehouse.dim_account da
-    on yt.account_id = da.dim_account_key
+    {{ ref('dim_account') }} da
+    using (dim_account_key)
 join
-    warehouse.dim_category dc 
-    on yt.category_id = dc.dim_category_key
+    {{ ref('dim_category') }} dc 
+    using (dim_category_key)
 join
-    warehouse.dim_payee dp
-    on yt.payee_id = dp.dim_payee_key
+    {{ ref('dim_payee') }} dp
+    using (dim_payee_key)

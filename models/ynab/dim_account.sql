@@ -1,9 +1,9 @@
 {{ config(materialized='table') }}
 
 select
-    id as dim_account_key
-    , name as account_name
-    , type as account_type
+    dim_account_key
+    , account_name
+    , account_type
     , on_budget
     , closed
     , balance
@@ -11,4 +11,4 @@ select
     , uncleared_balance
     , deleted
 from
-    warehouse.ynab_accounts
+    {{ ref('stg_ynab__accounts') }}
