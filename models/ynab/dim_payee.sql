@@ -2,8 +2,8 @@
 {{ config(materialized='table') }}
 
 select
-    id as dim_payee_key
+    dim_payee_key
     , name
     , deleted
 from
-    warehouse.ynab_payees
+    {{ ref('stg_ynab__payees') }}
