@@ -2,7 +2,7 @@ name: depot docker image build action
 
 on:
   push:
-    branches-ignore:
+    branches:
       - 'master'
 
 env:
