@@ -19,6 +19,3 @@ COPY . /dbt
 
 # Set working directory
 WORKDIR $DBT_DIR
-
-# Run dbt
-CMD ["dbt"]
