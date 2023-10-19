@@ -1,4 +1,7 @@
-{{ config(materialized='ephemeral') }}
+{{ 
+    config(materialized='ephemeral'),
+    tags=['ynab_categories],
+}}
 
 select
     id as dim_category_key

@@ -1,4 +1,9 @@
-{{ config(materialized='ephemeral') }}
+{{
+    config(
+        materialized='ephemeral',
+        tags=['ynab_accounts'],
+    ) 
+}}
 
 select
     id as dim_account_key
