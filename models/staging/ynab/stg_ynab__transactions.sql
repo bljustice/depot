@@ -1,4 +1,7 @@
-{{ config(materialized='ephemeral') }}
+{{ 
+    config(materialized='ephemeral'),
+    tags=['ynab_transactions'],
+}}
 
 select
     id as dim_transaction_key
