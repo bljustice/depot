@@ -15,9 +15,3 @@ models:
         description: ynab payee name
         tests:
           - not_null
-      - name: deleted
-        description: whether or not payee is deleted
-        tests:
-          - accepted_values:
-              values: [true, false]
-

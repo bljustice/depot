@@ -10,7 +10,6 @@ select
     , approved
     , amount_usd_milliunits
     , amount_usd
-    , yt.deleted
 from
     {{ ref('stg_ynab__transactions') }} yt
 join

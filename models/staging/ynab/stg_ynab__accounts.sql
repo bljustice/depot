@@ -14,7 +14,6 @@ select
     , balance
     , cleared_balance
     , uncleared_balance
-    , deleted
 from
     {{ source('ynab', 'ynab_accounts') }}
 

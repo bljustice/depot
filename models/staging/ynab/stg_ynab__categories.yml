@@ -33,9 +33,3 @@ models:
         description: month the goal is targeted to complete
       - name: goal_percentage_complete
         description: percentage of goal completed
-      - name: deleted
-        description: whether or not category is deleted
-        tests:
-          - accepted_values:
-              values: [true, false]
-
