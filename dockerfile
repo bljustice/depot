@@ -9,7 +9,7 @@ RUN apt-get update -y && \
 
 # Install DBT
 RUN pip install -U pip
-RUN pip install dbt-postgres==1.2.0
+RUN pip install dbt-duckdb==1.6.1
 
 # Set environment variables
 ENV DBT_DIR /dbt

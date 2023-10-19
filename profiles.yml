@@ -1,24 +1,6 @@
 depot:
   outputs:
-
     dev:
-      type: postgres
-      threads: 1
-      host: "{{ env_var('DEV_POSTGRES_HOST') }}"
-      port: "{{ env_var('DEV_POSTGRES_PORT') | as_number }}"
-      user: "{{ env_var('DEV_POSTGRES_USER') }}"
-      pass: "{{ env_var('DEV_POSTGRES_PASSWORD') }}"
-      dbname: "{{ env_var('DEV_POSTGRES_DATABASE') }}"
-      schema: "{{ env_var('DEV_POSTGRES_SCHEMA') }}"
-
-    prod:
-      type: postgres
-      threads: 1
-      host: "{{ env_var('PROD_POSTGRES_HOST') }}"
-      port: "{{ env_var('PROD_POSTGRES_PORT') | as_number}}"
-      user: "{{ env_var('PROD_POSTGRES_USER') }}"
-      pass: "{{ env_var('PROD_POSTGRES_PASSWORD') }}"
-      dbname: "{{ env_var('PROD_POSTGRES_DATABASE') }}"
-      schema: "{{ env_var('PROD_POSTGRES_SCHEMA') }}"
-
+      type: duckdb
+      path: md:depot
   target: dev
