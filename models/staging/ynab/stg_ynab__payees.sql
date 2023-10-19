@@ -1,7 +1,8 @@
-
 {{ 
-    config(materialized='ephemeral'),
-    tags=['ynab_payees']
+    config(
+        materialized='ephemeral', 
+        tags=['ynab_payees'],
+    )
 }}
 
 select

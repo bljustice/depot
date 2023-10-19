@@ -1,6 +1,8 @@
 {{ 
-    config(materialized='ephemeral'),
-    tags=['ynab_transactions'],
+    config(
+        materialized='ephemeral',
+        tags=['ynab_transactions'],
+    )
 }}
 
 select

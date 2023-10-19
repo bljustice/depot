@@ -1,6 +1,8 @@
 {{ 
-    config(materialized='ephemeral'),
-    tags=['ynab_categories],
+    config(
+        materialized='ephemeral',
+        tags=['ynab_categories'],
+    )
 }}
 
 select
