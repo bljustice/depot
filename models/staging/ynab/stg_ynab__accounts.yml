@@ -31,8 +31,3 @@ models:
         description: account balance amount that's cleared
       - name: uncleared balance
         description: account balance that isn't cleared
-      - name: deleted
-        description: whether or not account is deleted
-        tests:
-          - accepted_values:
-              values: [true, false]

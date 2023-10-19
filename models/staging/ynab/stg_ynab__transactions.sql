@@ -15,6 +15,5 @@ select
     , approved
     , amount as amount_usd_milliunits
     , round(amount / 1000., 2) as amount_usd
-    , deleted
 from 
     {{ source('ynab', 'ynab_transactions') }}

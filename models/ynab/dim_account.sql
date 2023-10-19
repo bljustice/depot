@@ -9,6 +9,5 @@ select
     , balance
     , cleared_balance
     , uncleared_balance
-    , deleted
 from
     {{ ref('stg_ynab__accounts') }}

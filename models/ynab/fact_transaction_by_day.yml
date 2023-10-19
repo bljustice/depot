@@ -38,10 +38,3 @@ models:
         description: transaction's usd amount in milliunits
       - name: amount_usd
         description: transaction's usd amount
-      - name: deleted
-        description: whether or not transaction is deleted
-        tests:
-          - accepted_values:
-              values: [true, false]
-
-

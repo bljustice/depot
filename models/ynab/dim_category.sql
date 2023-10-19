@@ -12,6 +12,5 @@ select
     , goal_target
     , goal_target_month
     , goal_percentage_complete
-    , deleted
 from
     {{ ref('stg_ynab__categories') }}
