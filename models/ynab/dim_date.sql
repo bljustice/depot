@@ -1,10 +1,10 @@
 {{ config(materialized='table') }}
 
 select 
-	to_char(dt, 'yyyymmdd')::integer as dim_date_key
-	, extract(year from dt) as year
-	, to_char(dt, 'Month') as month
-	, to_char(dt, 'Day') as day
-	, to_char(dt, 'yyyy-mm-dd') as date
+        strftime(dt, '%Y%m%d')::integer as dim_date_key
+        , date_trunc('year', dt) as year
+        , date_trunc('month', dt) as month
+        , date_trunc('day', dt) as day
+        , dt as date
 from 
 	{{ ref('all_dates') }}
