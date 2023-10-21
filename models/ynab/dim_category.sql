@@ -1,8 +1,8 @@
 {{ config(materialized='table') }}
 
 select
-    {{ dbt_utils.generate_surrogate_key(['id']) }} as dim_category_key
-    , id as category_id
+    {{ dbt_utils.generate_surrogate_key(['category_id']) }} as dim_category_key
+    , category_id
     , category_name
     , hidden
     , amount_budgeted

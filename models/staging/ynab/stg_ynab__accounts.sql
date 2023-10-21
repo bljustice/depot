@@ -6,7 +6,7 @@
 }}
 
 select
-    id
+    id as account_id
     , name as account_name
     , type as account_type
     , on_budget

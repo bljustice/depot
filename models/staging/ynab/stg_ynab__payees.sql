@@ -6,7 +6,7 @@
 }}
 
 select
-    id
+    id as payee_id
     , name
 from
     {{ source('ynab', 'ynab_payees') }}

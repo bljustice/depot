@@ -6,7 +6,7 @@ models:
     docs:
       show: true
     columns:
-      - name: dim_payee_key
+      - name: payee_id
         description: primary key from payees
         tests:
           - unique

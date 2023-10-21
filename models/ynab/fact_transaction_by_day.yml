@@ -10,8 +10,8 @@ models:
     docs:
       show: true
     columns:
-      - name: dim_transaction_key
-        description: primary key for transactions
+      - name: transaction_id
+        description: natural key for transactions
         tests:
           - unique
           - not_null
@@ -38,6 +38,7 @@ models:
         tests:
           - accepted_values:
               values: [true, false]
+              quote: false
       - name: amount_usd_milliunits
         description: transaction's usd amount in milliunits
       - name: amount_usd

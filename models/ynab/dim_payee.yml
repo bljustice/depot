@@ -15,6 +15,11 @@ models:
         tests:
           - unique
           - not_null
+      - name: payee_id
+        description: natural key from payees
+        tests:
+          - unique
+          - not_null
       - name: name
         description: ynab payee name
         tests:

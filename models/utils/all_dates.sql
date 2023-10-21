@@ -5,7 +5,7 @@ with date_range as (
      generate_series as start_timestamp,
      '2050-01-01'::date as stop_timestamp
   from
-     generate_series(timestamp '2012-01-01', timestamp '2050-01-01', interval '38 years')
+     generate_series(timestamp '2012-01-01', timestamp '2049-12-31', interval '37 years')
 ),
 
 dt as (

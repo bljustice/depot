@@ -11,7 +11,12 @@ models:
       show: true
     columns:
       - name: dim_account_key
-        description: primary key for account
+        description: surrogate key for dimension table
+        tests:
+          - unique
+          - not_null
+      - name: account_id
+        description: natural key for account
         tests:
           - unique
           - not_null
@@ -24,11 +29,13 @@ models:
         tests:
           - accepted_values:
               values: [true, false]
+              quote: false
       - name: closed
         description: whether or not account is closed
         tests:
           - accepted_values:
               values: [true, false]
+              quote: false
       - name: balance
         description: usd amount left over in account
       - name: cleared_balance
