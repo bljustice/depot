@@ -6,21 +6,21 @@ models:
     docs:
       show: true
     columns:
-      - name: dim_transaction_key
-        description: primary key for transactions
+      - name: transaction_id
+        description: natural key for transactions
         tests:
           - unique
           - not_null
       - name: date
         description: date of transaction
-      - name: dim_account_key
-        description: foreign key from dim_account
+      - name: account_id
+        description: natural key for account
         tests:
           - not_null
-      - name: dim_payee_key
-        description: foreign key from dim_payee
-      - name: dim_category_key
-        description: foreign key from dim_category
+      - name: payee_id
+        description: natural key for payee
+      - name: category_id
+        description: natural key for category
       - name: cleared
         description: whether or not transaction is cleared
       - name: approved
@@ -28,6 +28,7 @@ models:
         tests:
           - accepted_values:
               values: [true, false]
+              quote: false
       - name: amount_usd_milliunits
         description: transaction's usd amount in milliunits
       - name: amount_usd

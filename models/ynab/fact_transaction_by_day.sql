@@ -1,8 +1,8 @@
 {{ config(materialized='table') }}
 
 select
-    {{ dbt_utils.generate_surrogate_key(['dim_transaction_key', dim_date_key, dim_account_key, dim_payee_key, dim_category_key]) }} as fact_transaction_by_day_key
-    , dim_transaction_key
+    {{ dbt_utils.generate_surrogate_key(['transaction_id', 'dim_date_key', 'dim_account_key', 'dim_payee_key', 'dim_category_key']) }} as fact_transaction_by_day_key
+    , transaction_id
     , dim_date_key
     , dim_account_key
     , dim_payee_key
@@ -15,7 +15,7 @@ from
     {{ ref('stg_ynab__transactions') }} yt
 join
     {{ ref('dim_date') }} dd
-    using (date)
+    on strftime(date::date, '%Y%m%d')::integer = dd.dim_date_key
 join
     {{ ref('dim_account') }} da
     using (account_id)

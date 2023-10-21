@@ -6,7 +6,7 @@
 }}
 
 select
-    id
+    id as transaction_id
     , date
     , account_id
     , payee_id

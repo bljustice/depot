@@ -6,8 +6,8 @@ models:
     docs:
       show: true
     columns:
-      - name: dim_category_key
-        description: primary key for categories
+      - name: category_id
+        description: natural key for categories
         tests:
           - unique
           - not_null
@@ -18,6 +18,7 @@ models:
         tests:
           - accepted_values:
               values: [true, false]
+              quote: false
       - name: amount_budgeted
         description: usd amount budgeted towards category
       - name: spend_activity
