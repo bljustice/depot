@@ -6,7 +6,7 @@
 }}
 
 select
-    id as dim_account_key
+    id
     , name as account_name
     , type as account_type
     , on_budget

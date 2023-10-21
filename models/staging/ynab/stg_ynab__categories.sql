@@ -6,7 +6,7 @@
 }}
 
 select
-    id as dim_category_key
+    id
     , name as category_name
     , hidden
     , budgeted as amount_budgeted

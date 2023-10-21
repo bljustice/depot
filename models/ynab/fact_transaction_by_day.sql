@@ -1,7 +1,8 @@
 {{ config(materialized='table') }}
 
 select
-    dim_transaction_key
+    {{ dbt_utils.generate_surrogate_key(['dim_transaction_key', dim_date_key, dim_account_key, dim_payee_key, dim_category_key]) }} as fact_transaction_by_day_key
+    , dim_transaction_key
     , dim_date_key
     , dim_account_key
     , dim_payee_key
@@ -17,10 +18,10 @@ join
     using (date)
 join
     {{ ref('dim_account') }} da
-    using (dim_account_key)
+    using (account_id)
 join
     {{ ref('dim_category') }} dc 
-    using (dim_category_key)
+    using (category_id)
 join
     {{ ref('dim_payee') }} dp
-    using (dim_payee_key)
+    using (payee_id)
