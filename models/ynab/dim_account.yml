@@ -3,6 +3,10 @@ version: 2
 models:
   - name: dim_account
     description: ynab account dimension
+    config:
+      meta:
+        dagster:
+          group: ynab
     docs:
       show: true
     columns:

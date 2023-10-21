@@ -3,6 +3,10 @@ version: 2
 models:
   - name: fact_transaction_by_day
     description: fact table for daily ynab transactions
+    config:
+      meta:
+        dagster:
+          group: ynab
     docs:
       show: true
     columns:
