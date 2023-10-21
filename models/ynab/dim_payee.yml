@@ -3,6 +3,10 @@ version: 2
 models:
   - name: dim_payee
     description: ynab payee dimension
+    config:
+      meta:
+        dagster:
+          group: ynab
     docs:
       show: true
     columns:
