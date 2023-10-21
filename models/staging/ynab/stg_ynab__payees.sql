@@ -6,7 +6,7 @@
 }}
 
 select
-    id as dim_payee_key
+    id
     , name
 from
     {{ source('ynab', 'ynab_payees') }}

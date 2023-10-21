@@ -6,11 +6,11 @@
 }}
 
 select
-    id as dim_transaction_key
+    id
     , date
-    , account_id as dim_account_key
-    , payee_id as dim_payee_key
-    , category_id as dim_category_key
+    , account_id
+    , payee_id
+    , category_id
     , cleared
     , approved
     , amount as amount_usd_milliunits

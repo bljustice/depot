@@ -1,7 +1,8 @@
 {{ config(materialized='table') }}
 
 select
-    dim_account_key
+    {{ dbt_utils.generate_surrogate_key(['id']) }} as dim_account_key
+    , id as account_id
     , account_name
     , account_type
     , on_budget
