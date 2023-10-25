@@ -19,9 +19,9 @@ join
 join
     {{ ref('dim_account') }} da
     using (account_id)
-join
+left join
     {{ ref('dim_category') }} dc 
     using (category_id)
-join
+left join
     {{ ref('dim_payee') }} dp
     using (payee_id)
